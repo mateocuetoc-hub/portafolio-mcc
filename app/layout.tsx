@@ -4,8 +4,8 @@ import "./globals.css";
 const geist = Geist({ variable: "--font-geist", subsets: ["latin"] });
 const mono = Geist_Mono({ variable: "--font-mono", subsets: ["latin"] });
 export const metadata: Metadata = {
-  title: "Portafolio MCC",
-  description: "Proyectos de desarrollo web, software y tecnología de Mateo Cueto.",
+  title: "Mateo Cueto — Portafolio",
+  description: "Proyectos de desarrollo web, software y tecnología creados por Mateo Cueto.",
   other: { "codex-preview": "development" },
   icons: { icon: "/favicon.svg", shortcut: "/favicon.svg" },
 };
