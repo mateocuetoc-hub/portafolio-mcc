@@ -24,7 +24,20 @@ npm install
 npm run dev
 ```
 
-Luego abre `http://localhost:3000`.
+Luego abre `http://localhost:5173`.
+
+## Publicación
+
+El portafolio se publica automáticamente en GitHub Pages cada vez que se
+actualiza la rama `main`:
+
+https://mateocuetoc-hub.github.io/portafolio-mcc/
+
+Para comprobar localmente la versión estática que utiliza GitHub Pages:
+
+```bash
+npm run build:pages
+```
 
 ## Autor
 
