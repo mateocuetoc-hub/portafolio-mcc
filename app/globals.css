@@ -89,14 +89,48 @@ svg { fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round
 .quietLink { display: flex; align-items: center; gap: 6px; color: #454545; font-size: 12px; }
 .quietLink svg { width: 15px; }
 
-.projectReel { display: grid; gap: 14px; overflow: hidden; padding: 12px 0 120px; }
-.marquee { width: 100%; overflow: hidden; }
+.projectReel {
+  display: grid;
+  gap: 0;
+  overflow: hidden;
+  padding: 12px 0 120px;
+}
+
+.marquee {
+  width: 100%;
+  overflow: hidden;
+  padding: 10px 0;
+}
 .marqueeTrack { display: flex; width: max-content; animation: reel 38s linear infinite; }
 .marqueeReverse .marqueeTrack { animation-direction: reverse; animation-duration: 44s; transform: translateX(-10%); }
 .marqueeSet { display: flex; gap: 14px; padding-right: 14px; }
 .reelItem { width: 260px; flex: 0 0 260px; }
-.marquee:hover .marqueeTrack { animation-play-state: paused; }
+.projectReel:hover .marqueeTrack {
+  animation-play-state: paused;
+}
 @keyframes reel { to { transform: translateX(-50%); } }
+
+@keyframes reelDotPulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: .36;
+  }
+
+  50% {
+    transform: scale(1.9);
+    opacity: .85;
+  }
+}
+
+@keyframes reelFloat {
+  0%, 100% {
+    translate: 0 0;
+  }
+
+  50% {
+    translate: 0 -10px;
+  }
+}
 
 .projectVisual {
   position: relative;
@@ -127,6 +161,75 @@ svg { fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round
 .miniWindow i { width: 3px; height: 3px; border-radius: 50%; background: currentColor; opacity: .36; }
 .visualShape { position: absolute; width: 170px; height: 170px; border: 1px solid currentColor; border-radius: 50%; opacity: .13; transform: translate(76px, 80px); }
 .isCompact .visualShape { width: 100px; height: 100px; transform: translate(58px, 46px); }
+
+/* Interacción de las tarjetas del carrusel */
+.reelItem .projectVisual {
+  animation: reelFloat 3.8s ease-in-out infinite;
+  transform: scale(.96);
+  transition:
+    transform .35s cubic-bezier(.2, .8, .2, 1),
+    filter .35s ease,
+    box-shadow .35s ease;
+}
+
+.reelItem:nth-child(2n) .projectVisual {
+  animation-delay: -1.3s;
+}
+
+.reelItem:nth-child(3n) .projectVisual {
+  animation-delay: -2.6s;
+}
+
+.reelItem .projectVisual strong,
+.reelItem .projectVisual small {
+  transition: transform .35s cubic-bezier(.2, .8, .2, 1);
+}
+
+.reelItem .visualShape {
+  transition:
+    opacity .35s ease,
+    translate .7s cubic-bezier(.2, .8, .2, 1),
+    rotate .7s cubic-bezier(.2, .8, .2, 1),
+    scale .7s cubic-bezier(.2, .8, .2, 1);
+}
+
+.reelItem:hover .projectVisual {
+  animation-play-state: paused;
+  transform: scale(1);
+  filter: saturate(1.08) brightness(1.03);
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .5);
+}
+
+.reelItem:hover .projectVisual::before {
+  transform: translateX(110%);
+}
+
+.reelItem:hover .projectVisual strong {
+  transform: translateY(-3px) scale(1.04);
+}
+
+.reelItem:hover .projectVisual small {
+  transform: translateY(2px);
+}
+
+.reelItem:hover .visualShape {
+  opacity: .23;
+  translate: -14px -10px;
+  rotate: 16deg;
+  scale: 1.12;
+}
+
+.reelItem:hover .miniWindow i {
+  animation: reelDotPulse .55s ease both;
+}
+
+.reelItem:hover .miniWindow i:nth-child(2) {
+  animation-delay: .08s;
+}
+
+.reelItem:hover .miniWindow i:nth-child(3) {
+  animation-delay: .16s;
+}
 .art--water { background: linear-gradient(145deg, #d7f3ff, #93d6f3); color: #094e6d; }
 .art--water .visualShape { box-shadow: 0 0 0 24px rgba(255,255,255,.17), 0 0 0 48px rgba(255,255,255,.1); }
 .art--fashion { background: linear-gradient(145deg, #f5efe8, #d8c7b5); color: #52392d; }
