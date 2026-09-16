@@ -239,16 +239,16 @@ svg { fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round
 .reelItem:hover .miniWindow i:nth-child(3) {
   animation-delay: .16s;
 }
-.art--water { background: linear-gradient(145deg, #d7f3ff, #93d6f3); color: #094e6d; }
-.art--water .visualShape { box-shadow: 0 0 0 24px rgba(255,255,255,.17), 0 0 0 48px rgba(255,255,255,.1); }
+.art--election { background: linear-gradient(145deg, #e2ebff, #9bb8ed); color: #17396f; }
+.art--election .visualShape { box-shadow: 0 0 0 24px rgba(255,255,255,.17), 0 0 0 48px rgba(255,255,255,.1); }
 .art--fashion { background: linear-gradient(145deg, #f5efe8, #d8c7b5); color: #52392d; }
 .art--fashion strong { font-family: Georgia, serif; font-style: italic; font-weight: 400; }
 .art--game { background: linear-gradient(145deg, #ffe96b, #ffbd36); color: #263b71; }
 .art--game .visualShape { border-width: 18px; border-color: rgba(38,59,113,.16); }
 .art--backend { background: linear-gradient(145deg, #e3dfff, #b5a9ee); color: #352767; }
 .art--backend strong { font-family: var(--font-mono); letter-spacing: -.08em; }
-.art--hardware { background: linear-gradient(145deg, #d7f6df, #9dd6ac); color: #145b36; }
-.art--hardware .visualShape { border-radius: 20px; transform: rotate(28deg) translate(74px, 43px); }
+.art--attendance { background: linear-gradient(145deg, #d7f6df, #9dd6ac); color: #145b36; }
+.art--attendance .visualShape { border-radius: 20px; transform: rotate(28deg) translate(74px, 43px); }
 .art--report { background: linear-gradient(145deg, #ffe6db, #f6b89f); color: #71311f; }
 .art--report .visualShape { border-radius: 50% 50% 8px 8px; }
 
