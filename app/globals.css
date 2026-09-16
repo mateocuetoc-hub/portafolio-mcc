@@ -159,7 +159,7 @@ svg { fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: 50% 42%;
+  object-position: 50% 30%;
 }
 .projectVisual.hasImage::before { display: none; }
 .projectVisual strong { position: relative; z-index: 2; font-size: clamp(29px, 4vw, 54px); font-weight: 600; letter-spacing: -.07em; }
