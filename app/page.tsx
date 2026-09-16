@@ -28,6 +28,7 @@ const projects = [
     tags: ["Lua", "SRB2", "Game design"],
     url: "https://github.com/mateocuetoc-hub/SonicFonoKids",
     art: "game",
+    image: "/sonic-fonokids.webp",
   },
   {
     n: "04",
@@ -70,13 +71,23 @@ function ArrowIcon() {
 }
 
 function ProjectVisual({ project, compact = false }: { project: (typeof projects)[number]; compact?: boolean }) {
+  const imagePath = project.image
+    ? `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}${project.image}`
+    : null;
+
   return (
-    <div className={`projectVisual art--${project.art}${compact ? " isCompact" : ""}`} aria-hidden="true">
-      <span className="visualNumber">{project.n}</span>
-      <div className="miniWindow"><i /><i /><i /></div>
-      <strong>{project.short}</strong>
-      <small>{project.type}</small>
-      <span className="visualShape" />
+    <div className={`projectVisual art--${project.art}${compact ? " isCompact" : ""}${imagePath ? " hasImage" : ""}`} aria-hidden="true">
+      {imagePath ? (
+        <img src={imagePath} alt="" />
+      ) : (
+        <>
+          <span className="visualNumber">{project.n}</span>
+          <div className="miniWindow"><i /><i /><i /></div>
+          <strong>{project.short}</strong>
+          <small>{project.type}</small>
+          <span className="visualShape" />
+        </>
+      )}
     </div>
   );
 }
