@@ -28,7 +28,7 @@ const projects = [
     tags: ["Lua", "SRB2", "Game design"],
     url: "https://github.com/mateocuetoc-hub/SonicFonoKids",
     art: "game",
-    image: "/sonic-fonokids.webp",
+    image: "/projects/sonic-fonokids-audicion.png",
   },
   {
     n: "04",
