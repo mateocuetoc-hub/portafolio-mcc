@@ -1,4 +1,17 @@
-const projects = [
+type Project = {
+  n: string;
+  type: string;
+  name: string;
+  short: string;
+  copy: string;
+  tags: string[];
+  url: string;
+  art: string;
+  image?: string;
+  details?: string;
+};
+
+const projects: Project[] = [
   {
     n: "01",
     type: "Estructuras de datos en C",
@@ -18,6 +31,7 @@ const projects = [
     tags: ["Frontend", "Responsive", "REST API"],
     url: "https://github.com/mateocuetoc-hub/BeaGi-ModaCircular",
     art: "fashion",
+    image: "/projects/beagi-frontend.png",
   },
   {
     n: "03",
@@ -29,6 +43,7 @@ const projects = [
     url: "https://github.com/mateocuetoc-hub/SonicFonoKids",
     art: "game",
     image: "/projects/sonic-fonokids-audicion.png",
+    details: "proyectos/sonic-fonokids/",
   },
   {
     n: "04",
@@ -39,6 +54,7 @@ const projects = [
     tags: ["Java 21", "Spring Boot", "PostgreSQL"],
     url: "https://github.com/mateocuetoc-hub/beagi-backend",
     art: "backend",
+    image: "/projects/beagi-backend.png",
   },
   {
     n: "05",
@@ -164,7 +180,16 @@ export default function Home() {
         <div className="projectGrid">
           {projects.map((project) => (
             <article className="projectCard" key={project.name}>
-              <a href={project.url} target="_blank" rel="noreferrer" aria-label={`Ver ${project.name} en GitHub`}>
+              <a
+                href={project.details ?? project.url}
+                target={project.details ? undefined : "_blank"}
+                rel={project.details ? undefined : "noreferrer"}
+                aria-label={
+                  project.details
+                    ? `Ver detalles de ${project.name}`
+                    : `Ver ${project.name} en GitHub`
+                }
+              >
                 <ProjectVisual project={project} />
                 <div className="projectDetails">
                   <div className="projectTitle"><div><p>{project.type}</p><h3>{project.name}</h3></div><span className="arrowButton"><ArrowIcon /></span></div>
