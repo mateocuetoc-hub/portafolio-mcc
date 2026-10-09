@@ -1,3 +1,5 @@
+import ThemeToggle from "./theme-toggle";
+
 type Project = {
   n: string;
   type: string;
@@ -21,6 +23,7 @@ const projects: Project[] = [
     tags: ["C", "ABB", "Listas enlazadas"],
     url: "https://github.com/mateocuetoc-hub/Codigo-de-Proceso-Electoral-Chileno-Estructura-de-datos-2025",
     art: "election",
+    image: "/projects/proceso-electoral.png",
   },
   {
     n: "02",
@@ -147,9 +150,18 @@ export default function Home() {
           <span className="avatar">MC</span>
           <span><strong>Mateo Cueto</strong><small>Ingeniería Informática</small></span>
         </a>
-        <a className="status" href="https://github.com/mateocuetoc-hub" target="_blank" rel="noreferrer">
-          <i /> Disponible para colaborar
-        </a>
+        <div className="topbarActions">
+          <ThemeToggle />
+
+          <a
+            className="status"
+            href="https://github.com/mateocuetoc-hub"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <i /> Disponible para colaborar
+          </a>
+        </div>
       </header>
 
       <section className="hero shell" id="inicio">

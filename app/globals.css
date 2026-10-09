@@ -341,3 +341,136 @@ svg { fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
 }
+
+/* Botón de modo oscuro */
+
+.topbarActions {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.themeToggle {
+  display: grid;
+  width: 34px;
+  height: 34px;
+  padding: 0;
+  place-items: center;
+  border: 1px solid var(--line);
+  border-radius: 11px;
+  background: rgba(255, 255, 255, .55);
+  color: var(--ink);
+  cursor: pointer;
+  transition: transform .2s, background .2s;
+}
+
+.themeToggle:hover {
+  background: rgba(255, 255, 255, .9);
+  transform: translateY(-1px);
+}
+
+.themeToggle svg {
+  width: 17px;
+  height: 17px;
+}
+
+/* Paleta del modo oscuro */
+
+html[data-theme="dark"] {
+  --ink: #f5f5f7;
+  --muted: #aaaab2;
+  --line: rgba(255, 255, 255, .12);
+  --paper: #0e0f12;
+  --white: #18191e;
+  color-scheme: dark;
+}
+
+body {
+  transition: color .3s ease, background-color .3s ease;
+}
+
+html[data-theme="dark"] body {
+  background:
+    radial-gradient(
+      circle at 15% 5%,
+      rgba(74, 92, 140, .26),
+      transparent 24rem
+    ),
+    radial-gradient(
+      circle at 85% 1%,
+      rgba(102, 67, 132, .22),
+      transparent 27rem
+    ),
+    var(--paper);
+}
+
+html[data-theme="dark"] .topbar {
+  border-color: rgba(255, 255, 255, .1);
+  background: rgba(24, 25, 30, .72);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, .22);
+}
+
+html[data-theme="dark"] .themeToggle {
+  background: rgba(255, 255, 255, .06);
+}
+
+html[data-theme="dark"] .themeToggle:hover {
+  background: rgba(255, 255, 255, .12);
+}
+
+html[data-theme="dark"] .status,
+html[data-theme="dark"] .quietLink {
+  color: #d2d2d7;
+}
+
+html[data-theme="dark"] .primaryButton {
+  background: #f3f3f5;
+  color: #151519;
+}
+
+html[data-theme="dark"] .primaryButton span {
+  background: rgba(0, 0, 0, .09);
+}
+
+html[data-theme="dark"] .projectCard {
+  border-color: rgba(255, 255, 255, .08);
+  background: rgba(24, 25, 30, .86);
+  box-shadow: 0 14px 45px rgba(0, 0, 0, .18);
+}
+
+html[data-theme="dark"] .projectCard:hover {
+  box-shadow: 0 22px 50px rgba(0, 0, 0, .3);
+}
+
+html[data-theme="dark"] .projectDetails li,
+html[data-theme="dark"] .skills span {
+  background: rgba(255, 255, 255, .05);
+  color: #c7c7ce;
+}
+
+html[data-theme="dark"] .projectCard:hover .arrowButton {
+  background: #f3f3f5;
+  color: #151519;
+}
+
+html[data-theme="dark"] .aboutCard {
+  border-color: rgba(255, 255, 255, .09);
+  background: rgba(24, 25, 30, .7);
+  box-shadow: 0 18px 60px rgba(0, 0, 0, .2);
+}
+
+html[data-theme="dark"] .dock {
+  border-color: rgba(255, 255, 255, .1);
+  background: rgba(28, 29, 34, .78);
+  box-shadow:
+    0 12px 40px rgba(0, 0, 0, .38),
+    inset 0 1px 0 rgba(255, 255, 255, .08);
+}
+
+html[data-theme="dark"] .dock a:hover {
+  background: rgba(255, 255, 255, .1);
+}
+
+html[data-theme="dark"] .dockDivider {
+  background: rgba(255, 255, 255, .12);
+}
