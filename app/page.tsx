@@ -151,6 +151,17 @@ export default function Home() {
           <span><strong>Mateo Cueto</strong><small>Ingeniería Informática</small></span>
         </a>
         <div className="topbarActions">
+          <a
+            className="cvTopbar"
+            href="docs/CV_Mateo_Cueto_Castillo.pdf"
+            download
+            aria-label="Descargar currículum de Mateo Cueto"
+          >
+            <span className="cvFullText">Descargar CV</span>
+            <span className="cvShortText">CV</span>
+            <strong aria-hidden="true">↓</strong>
+          </a>
+
           <ThemeToggle />
 
           <a

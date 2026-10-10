@@ -1,4 +1,5 @@
 import styles from "./page.module.css";
+import ThemeToggle from "../../theme-toggle";
 
 export default function SonicFonoKidsPage() {
   return (
@@ -7,13 +8,17 @@ export default function SonicFonoKidsPage() {
         <nav className={styles.navigation}>
           <a href="../../#proyectos">← Volver al portafolio</a>
 
-          <a
-            href="https://github.com/mateocuetoc-hub/SonicFonoKids"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Ver código en GitHub ↗
-          </a>
+          <div className={styles.navigationActions}>
+            <ThemeToggle />
+
+            <a
+              href="https://github.com/mateocuetoc-hub/SonicFonoKids"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Ver código en GitHub ↗
+            </a>
+          </div>
         </nav>
 
         <section className={styles.hero}>
@@ -36,6 +41,25 @@ export default function SonicFonoKidsPage() {
               <li>SRB2</li>
               <li>Game design</li>
             </ul>
+
+            <div className={styles.heroActions}>
+              <a
+                className={styles.primaryButton}
+                href="https://github.com/mateocuetoc-hub/SonicFonoKids"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Explorar repositorio ↗
+              </a>
+
+              <a
+                className={styles.secondaryButton}
+                href="../../docs/CV_Mateo_Cueto_Castillo.pdf"
+                download
+              >
+                Descargar CV ↓
+              </a>
+            </div>
           </div>
 
           <figure className={styles.cover}>

@@ -208,3 +208,296 @@
     border-radius: 8px;
   }
 }
+
+.navigationActions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+/* Modo oscuro de SonicFonoKids */
+
+:global(html[data-theme="dark"]) .page {
+  color: #e8f3ff;
+  background:
+    repeating-linear-gradient(
+      0deg,
+      transparent 0 31px,
+      rgba(100, 169, 255, 0.045) 31px 32px
+    ),
+    linear-gradient(
+      135deg,
+      #081522 0%,
+      #0d1e31 50%,
+      #17212b 100%
+    );
+}
+
+:global(html[data-theme="dark"]) .navigation a {
+  color: #dcecff;
+}
+
+:global(html[data-theme="dark"]) .navigation a:hover,
+:global(html[data-theme="dark"]) .eyebrow {
+  color: #62adff;
+}
+
+:global(html[data-theme="dark"]) .hero h1,
+:global(html[data-theme="dark"]) .summaryHeading h2 {
+  color: #f2f7ff;
+}
+
+:global(html[data-theme="dark"]) .lead,
+:global(html[data-theme="dark"]) .summaryHeading > p:last-child,
+:global(html[data-theme="dark"]) .informationGrid p {
+  color: #b8c8d9;
+}
+
+:global(html[data-theme="dark"]) .tags li {
+  color: #b9dcff;
+  background: rgba(31, 103, 180, 0.2);
+  border-color: rgba(99, 174, 255, 0.25);
+}
+
+:global(html[data-theme="dark"]) .cover {
+  background: #102945;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.28);
+}
+
+:global(html[data-theme="dark"]) .informationGrid article {
+  background: rgba(18, 39, 61, 0.86);
+  border-color: rgba(99, 174, 255, 0.14);
+}
+
+:global(html[data-theme="dark"]) .informationGrid h3 {
+  color: #ddecff;
+}
+
+@media (max-width: 560px) {
+  .navigationActions {
+    width: 100%;
+    justify-content: space-between;
+  }
+}
+
+/* Mejoras visuales del resumen */
+
+.page {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.container {
+  position: relative;
+  z-index: 1;
+}
+
+/* Barra flotante tipo vidrio */
+
+.navigation {
+  position: sticky;
+  top: 16px;
+  z-index: 30;
+  padding: 9px 10px 9px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.75);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.67);
+  box-shadow: 0 8px 30px rgba(25, 25, 25, 0.07);
+  backdrop-filter: blur(20px) saturate(150%);
+}
+
+.navigation > a:first-child {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  transition: transform 0.2s;
+}
+
+.navigation > a:first-child:hover {
+  transform: translateX(-3px);
+}
+
+.navigationActions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Presentación principal */
+
+.hero {
+  min-height: 690px;
+  gap: clamp(45px, 7vw, 85px);
+  padding: 76px 0;
+}
+
+.heroContent {
+  animation: entrance 0.7s ease both;
+}
+
+.hero h1 {
+  font-size: clamp(4.5rem, 8vw, 7rem);
+  line-height: 0.84;
+}
+
+.lead {
+  font-size: 1.05rem;
+}
+
+.heroActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 11px;
+  margin-top: 30px;
+}
+
+.primaryButton,
+.secondaryButton {
+  display: inline-flex;
+  min-height: 46px;
+  align-items: center;
+  justify-content: center;
+  padding: 0 18px;
+  border-radius: 6px;
+  font-size: 0.76rem;
+  font-weight: 750;
+  text-decoration: none;
+  transition:
+    transform 0.25s,
+    box-shadow 0.25s,
+    background 0.25s;
+}
+
+.primaryButton {
+  background: #12335a;
+  color: #ffffff;
+  box-shadow: 0 12px 28px rgba(18, 51, 90, 0.2);
+}
+
+.secondaryButton {
+  border: 1px solid rgba(21, 49, 83, 0.14);
+  background: rgba(255, 255, 255, 0.66);
+  color: #153153;
+}
+
+.primaryButton:hover,
+.secondaryButton:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 17px 34px rgba(18, 51, 90, 0.18);
+}
+
+/* Portada con profundidad */
+
+.cover {
+  border: 9px solid rgba(255, 255, 255, 0.76);
+  border-radius: 8px;
+  box-shadow: 0 28px 70px rgba(36, 94, 153, 0.2);
+  transform: rotate(1deg);
+  transition:
+    transform 0.45s,
+    box-shadow 0.45s;
+}
+
+.cover:hover {
+  box-shadow: 0 35px 80px rgba(36, 94, 153, 0.27);
+  transform: rotate(0) translateY(-5px);
+}
+
+/* Tarjetas del resumen */
+
+.summary {
+  gap: clamp(50px, 8vw, 100px);
+  padding-bottom: 100px;
+}
+
+.summaryHeading {
+  position: sticky;
+  top: 110px;
+  align-self: start;
+}
+
+.informationGrid article {
+  position: relative;
+  overflow: hidden;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 14px 40px rgba(36, 94, 153, 0.06);
+  transition:
+    transform 0.3s,
+    box-shadow 0.3s;
+}
+
+.informationGrid article:hover {
+  box-shadow: 0 23px 52px rgba(36, 94, 153, 0.12);
+  transform: translateY(-5px);
+}
+
+@keyframes entrance {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mejoras del modo oscuro */
+
+:global(html[data-theme="dark"]) .navigation {
+  border-color: rgba(255, 255, 255, 0.1);
+  background: rgba(13, 30, 49, 0.74);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+}
+
+:global(html[data-theme="dark"]) .primaryButton {
+  background: #eaf4ff;
+  color: #102b49;
+}
+
+:global(html[data-theme="dark"]) .secondaryButton {
+  border-color: rgba(255, 255, 255, 0.13);
+  background: rgba(255, 255, 255, 0.06);
+  color: #dcecff;
+}
+
+:global(html[data-theme="dark"]) .cover {
+  border-color: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 28px 70px rgba(0, 0, 0, 0.34);
+}
+
+/* Adaptación para celulares */
+
+@media (max-width: 1100px) {
+  .summaryHeading {
+    position: static;
+  }
+}
+
+@media (max-width: 560px) {
+  .navigation {
+    top: 8px;
+  }
+
+  .hero {
+    min-height: auto;
+    padding: 68px 0;
+  }
+
+  .heroActions {
+    display: grid;
+  }
+
+  .primaryButton,
+  .secondaryButton {
+    width: 100%;
+  }
+
+  .cover {
+    border-width: 5px;
+    transform: none;
+  }
+}
