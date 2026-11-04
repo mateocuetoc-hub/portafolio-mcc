@@ -70,6 +70,42 @@ export default function SonicFonoKidsPage() {
           </figure>
         </section>
 
+        {/* Demostración del proyecto, alojada en YouTube */}
+        <section
+          className={styles.demo}
+          aria-labelledby="sonic-demo-title"
+        >
+          <header className={styles.demoHeader}>
+            <p className={styles.eyebrow}>El proyecto en acción</p>
+
+            <h2 id="sonic-demo-title">Demostración del proyecto</h2>
+
+            <p className={styles.demoIntro}>
+              Mira una demostración de SonicFonoKids dentro de Sonic Robo Blast 2.
+            </p>
+          </header>
+
+          <div className={styles.videoFrame}>
+            <iframe
+              src="https://www.youtube-nocookie.com/embed/J-E1s0s6K7I?autoplay=0&controls=1&playsinline=1"
+              title="Demostración en video de SonicFonoKids"
+              loading="lazy"
+              referrerPolicy="strict-origin-when-cross-origin"
+              allow="encrypted-media; picture-in-picture; fullscreen"
+              allowFullScreen
+            />
+          </div>
+
+          <a
+            className={styles.videoLink}
+            href="https://www.youtube.com/watch?v=J-E1s0s6K7I"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Ver también en YouTube ↗
+          </a>
+        </section>
+
         <section className={styles.summary}>
           <div className={styles.summaryHeading}>
             <p className={styles.eyebrow}>Sobre SonicFonoKids</p>
