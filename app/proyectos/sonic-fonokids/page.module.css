@@ -572,3 +572,78 @@
   background: rgba(24, 25, 30, 0.86);
   box-shadow: 0 18px 50px rgba(0, 0, 0, 0.2);
 }
+
+/* Oculto en modo claro durante esta primera prueba */
+.backgroundPattern {
+  display: none;
+}
+
+/* Patrón decorativo del modo oscuro */
+:global(html[data-theme="dark"]) .backgroundPattern {
+  display: block;
+  position: fixed;
+  top: 80px;
+  right: -50px;
+  z-index: 0;
+
+  /* Mantiene las proporciones originales */
+  width: min(65vw, 736px);
+  height: auto;
+
+  /* Elimina el amarillo sin editar el archivo */
+  filter: grayscale(1);
+  opacity: 0.12;
+
+  /* Difumina el contorno para integrarlo con el negro */
+  mask-image: radial-gradient(
+    ellipse at 70% 45%,
+    #000 15%,
+    transparent 72%
+  );
+
+  /* No bloquea botones ni enlaces */
+  pointer-events: none;
+  user-select: none;
+}
+
+@media (max-width: 760px) {
+  :global(html[data-theme="dark"]) .backgroundPattern {
+    right: -90px;
+    width: 450px;
+    opacity: 0.08;
+  }
+}
+
+/* Fondo de Sonic adaptado exclusivamente al modo claro */
+:global(html:not([data-theme="dark"])) .backgroundPattern {
+  display: block;
+  position: fixed;
+  top: 80px;
+  right: -50px;
+  z-index: 0;
+
+  width: min(65vw, 736px);
+  height: auto;
+
+  /* Sin amarillo y con contraste suave sobre el fondo claro */
+  filter: grayscale(1);
+  opacity: 0.14;
+  mix-blend-mode: multiply;
+
+  mask-image: radial-gradient(
+    ellipse at 70% 45%,
+    #000 15%,
+    transparent 72%
+  );
+
+  pointer-events: none;
+  user-select: none;
+}
+
+@media (max-width: 760px) {
+  :global(html:not([data-theme="dark"])) .backgroundPattern {
+    right: -90px;
+    width: 450px;
+    opacity: 0.10;
+  }
+}

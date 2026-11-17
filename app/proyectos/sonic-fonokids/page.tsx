@@ -4,6 +4,14 @@ import ThemeToggle from "../../theme-toggle";
 export default function SonicFonoKidsPage() {
   return (
     <main className={styles.page}>
+      {/* Fondo decorativo independiente del contenido */}
+      <img
+        className={styles.backgroundPattern}
+        src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/projects/sonic-fondo-original.jpg`}
+        alt=""
+        aria-hidden="true"
+      />
+
       <div className={styles.container}>
         <nav className={styles.navigation}>
           <a href="../../#proyectos">← Volver al portafolio</a>
